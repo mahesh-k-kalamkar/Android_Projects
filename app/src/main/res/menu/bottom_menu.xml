@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:title="●"
+        android:icon="@drawable/icon_home"
+        android:contentDescription="Home"/>
+
+    <item
+        android:title="●"
+        android:icon="@drawable/icon_search"
+        android:contentDescription="Search"/>
+
+    <item
+        android:title="●"
+        android:icon="@drawable/icon_camera"
+        android:contentDescription="Camera"/>
+
+    <item
+        android:title="●"
+        android:icon="@drawable/icon_cart"
+        android:contentDescription="Cart"/>
+
+    <item
+        android:id="@+id/profileFragment"
+        android:title="●"
+        android:icon="@drawable/icon_profile"
+        android:contentDescription="Profile"/>
+</menu>
