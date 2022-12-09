@@ -8,16 +8,19 @@
         android:contentDescription="Home"/>
 
     <item
+        android:id="@+id/SearchFragment"
         android:title="●"
         android:icon="@drawable/icon_search"
         android:contentDescription="Search"/>
 
     <item
+        android:id="@+id/camera"
         android:title="●"
         android:icon="@drawable/icon_camera"
         android:contentDescription="Camera"/>
 
     <item
+        android:id="@+id/MyordersFragment"
         android:title="●"
         android:icon="@drawable/icon_cart"
         android:contentDescription="Cart"/>

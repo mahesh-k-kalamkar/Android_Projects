@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/appBackgroundColor"
+    tools:context=".Fragments.HomeFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingTop="40dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:clipToPadding="false">
+
+            <TextView
+                android:id="@+id/home_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Mahi Furniture"
+                android:textFontWeight="900"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="p" />
+
+            <TextView
+                android:id="@+id/home_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="for your home"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_title" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_user"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:clipToPadding="false"
+                android:scrollbars="none"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_subtitle">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/OptionsButton_Active"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Armchair"
+                        app:icon="@drawable/icon_seat" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/OptionsButton_Inactive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Double bed"
+                        app:icon="@drawable/icon_bed" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/OptionsButton_Inactive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cupboard"
+                        app:icon="@drawable/icon_cupboard" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/OptionsButton_Inactive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Desks"
+                        app:icon="@drawable/icon_desk" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:ignore="ScrollViewSize">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Best seller"
+                            android:textFontWeight="600"
+                            android:textSize="19sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="See all"
+                            android:textColor="?attr/transparentBtnTextColor"
+                            android:textFontWeight="600" />
+
+                    </LinearLayout>
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="20dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="23dp">
+
+                                <ImageView
+                                    android:id="@+id/best_seller_image_1"
+                                    android:layout_width="140dp"
+                                    android:layout_height="145dp"
+                                    android:elevation="20dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/armchair_1"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="30dp"
+                                    android:backgroundTint="?attr/appContainerColor"
+                                    app:cardCornerRadius="18dp"
+                                    app:cardElevation="15dp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="15dp"
+                                        android:paddingBottom="10dp">
+
+                                        <View
+                                            android:id="@+id/best_seller_view_1"
+                                            android:layout_width="140dp"
+                                            android:layout_height="130dp"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/best_seller_name_1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/montserrat_extrabold"
+                                            android:text="Armchair"
+                                            android:textFontWeight="900"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/best_seller_view_1" />
+
+
+                                        <ImageView
+                                            android:id="@+id/best_seller_star_1"
+                                            android:layout_width="22dp"
+                                            android:layout_height="22dp"
+                                            android:layout_marginTop="2dp"
+                                            android:src="@drawable/icon_rate"
+                                            android:translationX="-1dp"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/best_seller_name_1"
+                                            app:tint="#f7ca07" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="2dp"
+                                            android:fontFamily="@font/montserrat_extrabold"
+                                            android:text="4.7"
+                                            android:textColor="?attr/ratingTextColor"
+                                            android:textFontWeight="900"
+                                            android:textSize="13sp"
+                                            app:layout_constraintBottom_toBottomOf="@id/best_seller_star_1"
+                                            app:layout_constraintLeft_toRightOf="@id/best_seller_star_1"
+                                            app:layout_constraintTop_toTopOf="@id/best_seller_star_1" />
+
+                                        <TextView
+                                            android:id="@+id/best_seller_price_1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="11dp"
+                                            android:fontFamily="@font/montserrat_semibold"
+                                            android:text="$150"
+                                            android:textColor="#dbbf41"
+                                            android:textFontWeight="700"
+                                            android:textSize="16sp"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/best_seller_star_1" />
+
+                                        <com.google.android.material.button.MaterialButton
+                                            android:id="@+id/best_seller_button"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:backgroundTint="@color/teal_900"
+                                            android:minWidth="0dp"
+                                            android:minHeight="0dp"
+                                            android:padding="1dp"
+                                            app:cornerRadius="100dp"
+                                            app:icon="@drawable/icon_add"
+                                            app:iconPadding="0dp"
+                                            app:iconSize="22dp"
+                                            app:iconTint="@color/white"
+                                            app:layout_constraintBottom_toBottomOf="@id/best_seller_price_1"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="@id/best_seller_price_1" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="23dp">
+
+                                <ImageView
+                                    android:id="@+id/best_seller_image_3"
+                                    android:layout_width="140dp"
+                                    android:layout_height="145dp"
+                                    android:elevation="20dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/armchair_9"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="30dp"
+                                    android:backgroundTint="?attr/appContainerColor"
+                                    app:cardCornerRadius="18dp"
+                                    app:cardElevation="15dp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="15dp"
+                                        android:paddingBottom="10dp">
+
+                                        <View
+                                            android:id="@+id/best_seller_view_3"
+                                            android:layout_width="140dp"
+                                            android:layout_height="130dp"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/best_seller_name_3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/montserrat_extrabold"
+                                            android:text="City seat"
+                                            android:textFontWeight="900"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/best_seller_view_3" />
+
+
+                                        <ImageView
+                                            android:id="@+id/best_seller_star_3"
+                                            android:layout_width="22dp"
+                                            android:layout_height="22dp"
+                                            android:layout_marginTop="2dp"
+                                            android:src="@drawable/icon_rate"
+                                            android:translationX="-1dp"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/best_seller_name_3"
+                                            app:tint="#f7ca07" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="2dp"
+                                            android:fontFamily="@font/montserrat_extrabold"
+                                            android:text="4.1"
+                                            android:textColor="?attr/ratingTextColor"
+                                            android:textFontWeight="900"
+                                            android:textSize="13sp"
+                                            app:layout_constraintBottom_toBottomOf="@id/best_seller_star_3"
+                                            app:layout_constraintLeft_toRightOf="@id/best_seller_star_3"
+                                            app:layout_constraintTop_toTopOf="@id/best_seller_star_3" />
+
+                                        <TextView
+                                            android:id="@+id/best_seller_price_3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="11dp"
+                                            android:fontFamily="@font/montserrat_semibold"
+                                            android:text="$230"
+                                            android:textColor="#dbbf41"
+                                            android:textFontWeight="700"
+                                            android:textSize="16sp"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/best_seller_star_3" />
+
+                                        <com.google.android.material.button.MaterialButton
+                                            android:id="@+id/best_seller_button3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:backgroundTint="@color/teal_900"
+                                            android:minWidth="0dp"
+                                            android:minHeight="0dp"
+                                            android:padding="1dp"
+                                            app:cornerRadius="100dp"
+                                            app:icon="@drawable/icon_add"
+                                            app:iconPadding="0dp"
+                                            app:iconSize="22dp"
+                                            app:iconTint="@color/white"
+                                            app:layout_constraintBottom_toBottomOf="@id/best_seller_price_3"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="@id/best_seller_price_3" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="23dp">
+
+                                <ImageView
+                                    android:id="@+id/best_seller_image_2"
+                                    android:layout_width="140dp"
+                                    android:layout_height="145dp"
+                                    android:elevation="20dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/armchair_2"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="30dp"
+                                    android:backgroundTint="?attr/appContainerColor"
+                                    app:cardCornerRadius="18dp"
+                                    app:cardElevation="15dp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="15dp"
+                                        android:paddingBottom="10dp">
+
+                                        <View
+                                            android:id="@+id/best_seller_view_2"
+                                            android:layout_width="140dp"
+                                            android:layout_height="130dp"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/best_seller_name_2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/montserrat_extrabold"
+                                            android:text="Gray modern"
+                                            android:textFontWeight="900"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/best_seller_view_2" />
+
+
+                                        <ImageView
+                                            android:id="@+id/best_seller_star_2"
+                                            android:layout_width="22dp"
+                                            android:layout_height="22dp"
+                                            android:layout_marginTop="2dp"
+                                            android:src="@drawable/icon_rate"
+                                            android:translationX="-1dp"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/best_seller_name_2"
+                                            app:tint="#f7ca07" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="2dp"
+                                            android:fontFamily="@font/montserrat_extrabold"
+                                            android:text="4.0"
+                                            android:textColor="?attr/ratingTextColor"
+                                            android:textFontWeight="900"
+                                            android:textSize="13sp"
+                                            app:layout_constraintBottom_toBottomOf="@id/best_seller_star_2"
+                                            app:layout_constraintLeft_toRightOf="@id/best_seller_star_2"
+                                            app:layout_constraintTop_toTopOf="@id/best_seller_star_2" />
+
+                                        <TextView
+                                            android:id="@+id/best_seller_price_2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="11dp"
+                                            android:fontFamily="@font/montserrat_semibold"
+                                            android:text="$450"
+                                            android:textColor="#dbbf41"
+                                            android:textFontWeight="700"
+                                            android:textSize="16sp"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/best_seller_star_2" />
+
+                                        <com.google.android.material.button.MaterialButton
+                                            android:id="@+id/best_seller_button2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:backgroundTint="@color/teal_900"
+                                            android:minWidth="0dp"
+                                            android:minHeight="0dp"
+                                            android:padding="1dp"
+                                            app:cornerRadius="100dp"
+                                            app:icon="@drawable/icon_add"
+                                            app:iconPadding="0dp"
+                                            app:iconSize="22dp"
+                                            app:iconTint="@color/white"
+                                            app:layout_constraintBottom_toBottomOf="@id/best_seller_price_2"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="@id/best_seller_price_2" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="50dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Popular items"
+                            android:textFontWeight="600"
+                            android:textSize="19sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="See all"
+                            android:textColor="?attr/transparentBtnTextColor"
+                            android:textFontWeight="600" />
+
+                    </LinearLayout>
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="20dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20dp">
+
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="0dp"
+                                    android:backgroundTint="?attr/appContainerColor"
+                                    app:cardCornerRadius="18dp"
+                                    app:cardElevation="15dp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="260dp"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:paddingVertical="12dp">
+
+                                        <ImageView
+                                            android:id="@+id/popular_item_image_1"
+                                            android:layout_width="100dp"
+                                            android:layout_height="100dp"
+                                            android:elevation="20dp"
+                                            android:scaleType="fitCenter"
+                                            android:src="@drawable/armchair_4"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/popular_item_text_1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="5dp"
+                                            android:fontFamily="@font/montserrat_extrabold"
+                                            android:text="Green sophie"
+                                            android:textFontWeight="900"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@id/popular_item_image_1"
+                                            app:layout_constraintTop_toTopOf="@id/popular_item_image_1" />
+
+
+                                        <ImageView
+                                            android:id="@+id/popular_item_start_1"
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="2dp"
+                                            android:src="@drawable/icon_rate"
+                                            android:translationX="-1dp"
+                                            app:layout_constraintLeft_toRightOf="@id/popular_item_image_1"
+                                            app:layout_constraintTop_toBottomOf="@id/popular_item_text_1"
+                                            app:tint="#f7ca07" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="2dp"
+                                            android:fontFamily="@font/montserrat_extrabold"
+                                            android:text="4.9"
+                                            android:textColor="?attr/ratingTextColor"
+                                            android:textFontWeight="900"
+                                            android:textSize="12sp"
+                                            app:layout_constraintBottom_toBottomOf="@id/popular_item_start_1"
+                                            app:layout_constraintLeft_toRightOf="@id/popular_item_start_1"
+                                            app:layout_constraintTop_toTopOf="@id/popular_item_start_1" />
+
+                                        <TextView
+                                            android:id="@+id/popular_item_price_1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="6dp"
+                                            android:layout_marginBottom="3dp"
+                                            android:fontFamily="@font/montserrat_semibold"
+                                            android:text="$750"
+                                            android:textColor="#dbbf41"
+                                            android:textFontWeight="700"
+                                            android:textSize="15sp"
+                                            app:layout_constraintBottom_toBottomOf="@id/popular_item_image_1"
+                                            app:layout_constraintLeft_toRightOf="@id/popular_item_image_1" />
+
+                                        <com.google.android.material.button.MaterialButton
+                                            android:id="@+id/popular_item_button_1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:backgroundTint="@color/teal_900"
+                                            android:minWidth="0dp"
+                                            android:minHeight="0dp"
+                                            android:padding="0.75dp"
+                                            app:cornerRadius="100dp"
+                                            app:icon="@drawable/icon_add"
+                                            app:iconPadding="0dp"
+                                            app:iconSize="22dp"
+                                            app:iconTint="@color/white"
+                                            app:layout_constraintBottom_toBottomOf="@id/popular_item_price_1"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="@id/popular_item_price_1" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20dp">
+
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="0dp"
+                                    android:backgroundTint="?attr/appContainerColor"
+                                    app:cardCornerRadius="18dp"
+                                    app:cardElevation="15dp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="260dp"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:paddingVertical="12dp">
+
+                                        <ImageView
+                                            android:id="@+id/popular_item_image_2"
+                                            android:layout_width="100dp"
+                                            android:layout_height="100dp"
+                                            android:elevation="20dp"
+                                            android:scaleType="fitCenter"
+                                            android:src="@drawable/armchair_5"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/popular_item_text_2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="5dp"
+                                            android:fontFamily="@font/montserrat_extrabold"
+                                            android:text="Pilezzo"
+                                            android:textFontWeight="900"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@id/popular_item_image_2"
+                                            app:layout_constraintTop_toTopOf="@id/popular_item_image_2" />
+
+
+                                        <ImageView
+                                            android:id="@+id/popular_item_start_2"
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="2dp"
+                                            android:src="@drawable/icon_rate"
+                                            android:translationX="-1dp"
+                                            app:layout_constraintLeft_toRightOf="@id/popular_item_image_2"
+                                            app:layout_constraintTop_toBottomOf="@id/popular_item_text_2"
+                                            app:tint="#f7ca07" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="2dp"
+                                            android:fontFamily="@font/montserrat_extrabold"
+                                            android:text="4.0"
+                                            android:textColor="?attr/ratingTextColor"
+                                            android:textFontWeight="900"
+                                            android:textSize="12sp"
+                                            app:layout_constraintBottom_toBottomOf="@id/popular_item_start_2"
+                                            app:layout_constraintLeft_toRightOf="@id/popular_item_start_2"
+                                            app:layout_constraintTop_toTopOf="@id/popular_item_start_2" />
+
+                                        <TextView
+                                            android:id="@+id/popular_item_price_2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="6dp"
+                                            android:layout_marginBottom="3dp"
+                                            android:fontFamily="@font/montserrat_semibold"
+                                            android:text="$550"
+                                            android:textColor="#dbbf41"
+                                            android:textFontWeight="700"
+                                            android:textSize="15sp"
+                                            app:layout_constraintBottom_toBottomOf="@id/popular_item_image_2"
+                                            app:layout_constraintLeft_toRightOf="@id/popular_item_image_2" />
+
+                                        <com.google.android.material.button.MaterialButton
+                                            android:id="@+id/popular_item_button_2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:backgroundTint="@color/teal_900"
+                                            android:minWidth="0dp"
+                                            android:minHeight="0dp"
+                                            android:padding="0.75dp"
+                                            app:cornerRadius="100dp"
+                                            app:icon="@drawable/icon_add"
+                                            app:iconPadding="0dp"
+                                            app:iconSize="22dp"
+                                            app:iconTint="@color/white"
+                                            app:layout_constraintBottom_toBottomOf="@id/popular_item_price_2"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="@id/popular_item_price_2" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20dp">
+
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="0dp"
+                                    android:backgroundTint="?attr/appContainerColor"
+                                    app:cardCornerRadius="18dp"
+                                    app:cardElevation="15dp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="260dp"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="10dp"
+                                        android:paddingVertical="12dp">
+
+                                        <ImageView
+                                            android:id="@+id/popular_item_image_3"
+                                            android:layout_width="100dp"
+                                            android:layout_height="100dp"
+                                            android:elevation="20dp"
+                                            android:scaleType="fitCenter"
+                                            android:src="@drawable/armchair_7"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/popular_item_text_3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="5dp"
+                                            android:fontFamily="@font/montserrat_extrabold"
+                                            android:text="Golden days"
+                                            android:textFontWeight="900"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@id/popular_item_image_3"
+                                            app:layout_constraintTop_toTopOf="@id/popular_item_image_3" />
+
+
+                                        <ImageView
+                                            android:id="@+id/popular_item_start_3"
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="2dp"
+                                            android:src="@drawable/icon_rate"
+                                            android:translationX="-1dp"
+                                            app:layout_constraintLeft_toRightOf="@id/popular_item_image_3"
+                                            app:layout_constraintTop_toBottomOf="@id/popular_item_text_3"
+                                            app:tint="#f7ca07" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="2dp"
+                                            android:fontFamily="@font/montserrat_extrabold"
+                                            android:text="4.8"
+                                            android:textColor="?attr/ratingTextColor"
+                                            android:textFontWeight="900"
+                                            android:textSize="12sp"
+                                            app:layout_constraintBottom_toBottomOf="@id/popular_item_start_3"
+                                            app:layout_constraintLeft_toRightOf="@id/popular_item_start_3"
+                                            app:layout_constraintTop_toTopOf="@id/popular_item_start_3" />
+
+                                        <TextView
+                                            android:id="@+id/popular_item_price_3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="6dp"
+                                            android:layout_marginBottom="3dp"
+                                            android:fontFamily="@font/montserrat_semibold"
+                                            android:text="$1450"
+                                            android:textColor="#dbbf41"
+                                            android:textFontWeight="700"
+                                            android:textSize="15sp"
+                                            app:layout_constraintBottom_toBottomOf="@id/popular_item_image_3"
+                                            app:layout_constraintLeft_toRightOf="@id/popular_item_image_3" />
+
+                                        <com.google.android.material.button.MaterialButton
+                                            android:id="@+id/popular_item_button_3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:backgroundTint="@color/teal_900"
+                                            android:minWidth="0dp"
+                                            android:minHeight="0dp"
+                                            android:padding="0.75dp"
+                                            app:cornerRadius="100dp"
+                                            app:icon="@drawable/icon_add"
+                                            app:iconPadding="0dp"
+                                            app:iconSize="22dp"
+                                            app:iconTint="@color/white"
+                                            app:layout_constraintBottom_toBottomOf="@id/popular_item_price_3"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="@id/popular_item_price_3" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</FrameLayout>
