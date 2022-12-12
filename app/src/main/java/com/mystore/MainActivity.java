@@ -1,7 +1,10 @@
 package com.mystore;
 
+import static androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 0;
     ImageView image;
     FragmentTransaction ft;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +39,17 @@ public class MainActivity extends AppCompatActivity {
         ft.replace(R.id.main_fragment, HomeFragment);
         ft.commit();
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
         navigation.setOnItemSelectedListener(mOnNavigationItemSelectedListener);
 
 
+        sharedPreferences = getSharedPreferences("Setting_Pref", MODE_PRIVATE);
+        boolean isCheck = sharedPreferences.getBoolean("isCheckMobData", false);
+        if (isCheck) {
+            AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
     }
 
     public void openCamera(View view) {
@@ -94,6 +105,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-
 
 //https://github.com/RyanKoech/FurnitureApp_UI.git
