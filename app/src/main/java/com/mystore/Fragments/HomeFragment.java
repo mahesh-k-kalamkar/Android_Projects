@@ -65,7 +65,8 @@ public class HomeFragment extends Fragment {
     }
 
     private void FetchData() {
-        String url = "https://fakestoreapi.com/products/1";
+//        String url = "https://fakestoreapi.com/products/1";
+        String url = "https://pixabay.com/api/?key=32236174-5e68d3f1ad824b23635654c23&q=yellow+flowers&image_type=photo";
 
         RequestQueue queue = Volley.newRequestQueue(getContext());
 

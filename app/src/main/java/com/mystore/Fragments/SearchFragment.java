@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -15,13 +14,36 @@ import androidx.fragment.app.Fragment;
 
 import com.mystore.R;
 
-import org.w3c.dom.Text;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class SearchFragment extends Fragment {
 
-    TextView btn_search;
+    static float temp;
+    TextView btn_search, temperature;
     EditText searchTxt;
     View v;
+
+    public static float cpuTemperature() {
+        Process process;
+
+        try {
+            process = Runtime.getRuntime().exec("cat sys/class/thermal_zone0/temp");
+            process.waitFor();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line = reader.readLine();
+            if (line != null) {
+                temp = Float.parseFloat(line);
+                return temp / 1000.0f;
+            } else {
+                return 51.0f;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0.0f;
+        }
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,8 +54,11 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_search, container, false);
 
+
         searchTxt = v.findViewById(R.id.searchTxt);
+        temperature = v.findViewById(R.id.TvTemperature);
         btn_search = v.findViewById(R.id.btn_search);
+
 
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,9 +70,14 @@ public class SearchFragment extends Fragment {
                 intent.putExtra(SearchManager.QUERY, term);
                 startActivity(intent);
 
+                cpuTemperature();
+                temperature.setText((int) temp);
+
             }
         });
 
         return v;
     }
+
+
 }
